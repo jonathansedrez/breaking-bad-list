@@ -1,0 +1,44 @@
+@import '../../layout/variables.scss';
+
+.presentation-contatiner {
+  height: 100vh;
+  background: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentation-inner-contatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.presentation-title-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.presentation-title {
+  font-family: 'STIX Two Text', serif;
+  font-size: 4rem;
+  color: white;
+  text-shadow: black 0 -3px;
+}
+
+.presentation-button {
+  height: 64px;
+  width: 220px;
+  background-color: white;
+  color: $black;
+  border: 1px solid $black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 32px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

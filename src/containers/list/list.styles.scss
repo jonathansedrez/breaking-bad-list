@@ -1,0 +1,25 @@
+@import '../../layout/variables.scss';
+
+.character-card {
+  height: 130px;
+  width: 130px;
+  margin: 8px;
+}
+
+.list-image-wrapper {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    45deg,
+    rgb(228, 228, 228) 0%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.list-image-innerWrapper {
+  display: flex;
+  flex-shrink: 3;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 75%;
+}

@@ -1,0 +1,25 @@
+@import '../../layout/variables.scss';
+
+.card-image-wrapper {
+  width: 440px;
+  height: 310px;
+  position: relative;
+  margin-bottom: 64px;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 50%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.card-image-text {
+  position: absolute;
+  font-family: 'STIX Two Text', serif;
+  color: $brown;
+  top: 16px;
+  left: 180px;
+  width: 200px;
+  font-size: 32px;
+}
