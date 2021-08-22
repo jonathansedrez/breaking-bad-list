@@ -21,7 +21,7 @@ export const Presentation: React.FC = () => {
             Let&apos;s cook
           </button>
         </span>
-        <img src={presentationImage} />
+        <img src={presentationImage} alt="Walter White face" />
       </div>
     </div>
   );

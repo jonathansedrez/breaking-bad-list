@@ -12,14 +12,13 @@ interface ICardImage {
   id: string;
   image: Image;
   name: string;
-  onClick: () => void;
 }
 export const CardImage: React.FC<ICardImage> = (props: ICardImage) => {
-  const { id, image, name, onClick } = props;
+  const { id, image, name } = props;
 
   return (
     <Link to={`details/${id}`}>
-      <div className="card-image-wrapper" onClick={onClick}>
+      <div className="card-image-wrapper">
         <img src={image.src} alt={image.alt} className="card-image" />
         <div>
           <p className="card-image-text">{name}</p>
