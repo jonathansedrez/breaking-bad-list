@@ -6,9 +6,11 @@ export const Presentation: React.FC = () => {
   const presentationContainer = useRef<HTMLDivElement>(null);
 
   const handleClickButton = () => {
-    if (presentationContainer.current) {
-      console.log(presentationContainer.current.offsetHeight);
-    }
+    const presentationHeight = presentationContainer.current?.offsetHeight;
+    window.scrollTo({
+      top: presentationHeight || 0,
+      behavior: 'smooth',
+    });
   };
 
   return (

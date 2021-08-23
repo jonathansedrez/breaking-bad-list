@@ -6,7 +6,7 @@ export const Routes: React.FC = (props) => {
   return (
     <Router {...props}>
       <Home path="/" />
-      <Details path="/details/:characterId" />
+      <Details path="/:characterId" />
     </Router>
   );
 };

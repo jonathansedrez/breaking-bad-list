@@ -17,7 +17,7 @@ export const CardImage: React.FC<ICardImage> = (props: ICardImage) => {
   const { id, image, name } = props;
 
   return (
-    <Link to={`details/${id}`}>
+    <Link to={`/${id}`}>
       <div className="card-image-wrapper">
         <img src={image.src} alt={image.alt} className="card-image" />
         <div>

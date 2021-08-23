@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { useInfiniteQuery } from 'react-query';
 
-import { BASE_URL, QUERY_KEYS } from '../../resources/service';
+import { BASE_URL, QUERY_KEYS } from '../../service/service';
 import { Character } from './list.types';
 
 export const CHARACTERS_PER_PAGE = 12;
