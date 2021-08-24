@@ -8,14 +8,14 @@ export const CardImage: React.FC<ICardImage> = (props: ICardImage) => {
 
   return (
     <div
-      className="card-image-wrapper"
+      className="card-image__wrapper"
       key={id}
       role="contentinfo"
       onClick={onClick}
     >
-      <img src={image.src} alt={image.alt} className="card-image" />
+      <img src={image.src} alt={image.alt} className="card-image__image" />
       <div>
-        <p className="card-image-text">{name}</p>
+        <p className="card-image__text">{name}</p>
       </div>
     </div>
   );

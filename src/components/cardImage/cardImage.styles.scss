@@ -1,25 +1,29 @@
 @import '../../layout/variables.scss';
 
-.card-image-wrapper {
+.card-image__wrapper {
   width: 440px;
   height: 310px;
   position: relative;
   margin-bottom: 64px;
   cursor: pointer;
+  // background: red;
+  display: flex;
+  justify-content: center;
 }
 
-.card-image {
+.card-image__image {
   width: 50%;
   height: 100%;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
-.card-image-text {
+.card-image__text {
   position: absolute;
   font-family: 'STIX Two Text', serif;
-  color: $brown;
+  color: $presentation;
+  text-shadow: 0.5px 0.5px 1px $black;
   top: 16px;
-  left: 180px;
-  width: 200px;
+  transform: translateX(-30px);
+  width: 50%;
   font-size: 32px;
 }
