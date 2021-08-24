@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from '@reach/router';
 
 import { useFetchCharacters } from './list.service';
 import { CardImage, Input } from '../../components';
@@ -19,12 +20,17 @@ export const List: React.FC = () => {
     hasNextPage,
   } = useFetchCharacters(filterInputDebounce);
   const footerRef = useRef(null);
+  const navigate = useNavigate();
 
   useIntersectionObserver({
     target: footerRef,
     onIntersect: fetchNextPage,
     enabled: hasNextPage || true,
   });
+
+  const handleNavigate = (characterId: string) => {
+    navigate(`/${characterId}`);
+  };
 
   return (
     <div>
@@ -47,6 +53,7 @@ export const List: React.FC = () => {
                     id={character.char_id}
                     name={character.name}
                     image={{ src: character.img, alt: character.name }}
+                    onClick={() => handleNavigate(character.char_id)}
                   />
                 ))}
               </React.Fragment>
