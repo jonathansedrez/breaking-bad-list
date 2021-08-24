@@ -34,15 +34,19 @@ export const List: React.FC = () => {
 
   return (
     <div>
-      {isLoading && <div>CARREGANDO...</div>}
-      {isError && <div>Erro</div>}
+      {/* {isLoading && <div>CARREGANDO...</div>}
+      {isError && <div>Erro</div>} */}
 
-      <Input
-        value={filterInput}
-        onChange={({ target: { value } }) => setFilterInput(value)}
-      />
+      <div className="list-image__phrase-container">
+        <h2 className="list-image__phrase">SAY MY NAME...</h2>
+        <Input
+          value={filterInput}
+          onChange={({ target: { value } }) => setFilterInput(value)}
+          placeholder="ex: Walter White"
+        />
+      </div>
 
-      <div className="list-image-wrapper">
+      <div className="list-image__wrapper">
         <div className="list-image-innerWrapper">
           {isSuccess &&
             data?.pages.map((page) => (

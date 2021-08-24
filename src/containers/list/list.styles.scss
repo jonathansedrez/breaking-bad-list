@@ -6,14 +6,9 @@
   margin: 8px;
 }
 
-.list-image-wrapper {
+.list-image__wrapper {
   display: flex;
   justify-content: center;
-  background: linear-gradient(
-    45deg,
-    rgb(228, 228, 228) 0%,
-    rgb(255, 255, 255) 100%
-  );
 }
 
 .list-image-innerWrapper {
@@ -22,4 +17,19 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 75%;
+}
+
+.list-image__phrase-container {
+  margin: 64px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-image__phrase {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: $black;
 }
