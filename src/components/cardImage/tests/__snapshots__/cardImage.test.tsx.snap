@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component] Card Image should execute snapshot 1`] = `
+<div
+  class="card-image-wrapper"
+  role="contentinfo"
+>
+  <img
+    alt="alt image"
+    class="card-image"
+    src="htttp://image.pnge"
+  />
+  <div>
+    <p
+      class="card-image-text"
+    >
+      John Doe
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Characters screen should execute snapshot 1`] = `
+<input
+  class="input__text"
+/>
+`;
