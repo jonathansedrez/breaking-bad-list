@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import './presentation.styles.scss';
-import presentationImage from '../../assets/images/presentation.jpg';
+
+import presentationImage from '../../assets/images/presentation-gif.gif';
 
 export const Presentation: React.FC = () => {
   const presentationContainer = useRef<HTMLDivElement>(null);
@@ -14,17 +15,17 @@ export const Presentation: React.FC = () => {
   };
 
   return (
-    <div className="presentation-contatiner" ref={presentationContainer}>
-      <div className="presentation-inner-contatiner">
-        <span className="presentation-title-container">
-          <h1 className="presentation-title">Breaking</h1>
-          <h1 className="presentation-title">Bad</h1>
-          <button className="presentation-button" onClick={handleClickButton}>
-            Let&apos;s cook
-          </button>
-        </span>
-        <img src={presentationImage} alt="Walter White face" />
+    <div className="presentation__contatiner" ref={presentationContainer}>
+      <div className="presentation__contatiner-image">
+        <img
+          src={presentationImage}
+          alt="imagem apresentação"
+          className="presentation__image"
+        />
       </div>
+      <button className="presentation__button" onClick={handleClickButton}>
+        Let&apos;s cook
+      </button>
     </div>
   );
 };
