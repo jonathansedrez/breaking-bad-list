@@ -1,3 +1,5 @@
+@import '../../layout/variables.scss';
+
 .details__wrapper {
   height: 100vh;
   display: flex;
@@ -26,8 +28,38 @@
 
 .details__inner-wrapper {
   z-index: 1;
+  width: 100%;
   height: calc(100vh - 38px);
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
   background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details__name {
+  font-size: 3rem;
+  font-family: 'STIX Two Text', serif;
+  color: $black;
+}
+
+.details__nickname {
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: $presentation;
+}
+
+.details__infos {
+  display: flex;
+  width: 60vw;
+  padding-top: 64px;
+  justify-content: space-between;
+}
+
+.details__image {
+  height: 520px;
+  width: 390px;
+  border-radius: 24px;
 }

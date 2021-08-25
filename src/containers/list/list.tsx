@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Fragment } from 'react';
 import { useNavigate } from '@reach/router';
 
 import { useFetchCharacters } from './list.service';
-import { CardImage, Input } from '../../components';
+import { CardImage, Input, Loader } from '../../components';
 import { useDebounce, useIntersectionObserver } from '../../hooks';
 import './list.styles.scss';
 
@@ -33,20 +33,23 @@ export const List: React.FC = () => {
   };
 
   return (
-    <div>
-      {/* {isLoading && <div>CARREGANDO...</div>}
-      {isError && <div>Erro</div>} */}
+    <div className="list-image__wrapper">
+      {/* {isError && <div>Erro</div>} */}
+
+      <Loader isVisible={isLoading} />
 
       <div className="list-image__phrase-container">
-        <h2 className="list-image__phrase">SAY MY NAME...</h2>
-        <Input
-          value={filterInput}
-          onChange={({ target: { value } }) => setFilterInput(value)}
-          placeholder="ex: Walter White"
-        />
-      </div>
+        {isSuccess && (
+          <Fragment>
+            <h2 className="list-image__phrase">SAY MY NAME...</h2>
+            <Input
+              value={filterInput}
+              onChange={({ target: { value } }) => setFilterInput(value)}
+              placeholder="ex: Walter White"
+            />
+          </Fragment>
+        )}
 
-      <div className="list-image__wrapper">
         <div className="list-image-innerWrapper">
           {isSuccess &&
             data?.pages.map((page) => (
@@ -66,13 +69,18 @@ export const List: React.FC = () => {
       </div>
 
       <div className="list-image__footer" ref={footerRef}>
-        <p>
-          {isFetchingNextPage
-            ? 'Loading more...'
-            : hasNextPage
-            ? 'Load Newer'
-            : 'Nothing more to load'}
-        </p>
+        {isFetchingNextPage && (
+          <span className="list-image__footer__load-more">
+            <p className="list-image__footer__text">Carregando mais...</p>
+            <Loader isVisible={isFetchingNextPage} size="small" />
+          </span>
+        )}
+
+        {!hasNextPage && !isLoading && (
+          <p className="list-image__footer__text">
+            Todos persononagens carregados :)
+          </p>
+        )}
       </div>
     </div>
   );

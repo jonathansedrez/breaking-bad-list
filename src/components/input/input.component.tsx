@@ -1,11 +1,11 @@
 import React, { InputHTMLAttributes } from 'react';
 import './input.styles.scss';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   value?: string;
 }
 
-export const Input: React.FC<InputProps> = (props: InputProps) => {
+export const Input: React.FC<IInput> = (props: IInput) => {
   const { value } = props;
   return <input className="input__text" {...props} value={value} />;
 };

@@ -1,0 +1,25 @@
+@import '../../layout/variables.scss';
+
+.loader {
+  border: 8px solid $grey;
+  border-radius: 50%;
+  border-top: 8px solid $black;
+  width: 64px;
+  height: 64px;
+  animation: spin 2s linear infinite;
+}
+
+.loader--small {
+  width: 12px;
+  height: 12px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

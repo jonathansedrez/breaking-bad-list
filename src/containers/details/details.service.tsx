@@ -6,7 +6,7 @@ import { Character } from '../../service/types';
 
 export const CHARACTERS_PER_PAGE = 12;
 
-const fetchCharacterById = (id: string): Promise<AxiosResponse<Character>> =>
+const fetchCharacterById = (id: string): Promise<AxiosResponse<Character[]>> =>
   axios.get(`${BASE_URL}/characters/${id}`, {
     params: {
       id,

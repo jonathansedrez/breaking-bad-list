@@ -16,18 +16,29 @@ export const Details: React.FC<IDetails> = (props: IDetails) => {
 
   const navigate = useNavigate();
 
-  const handleGoBack = () => {
-    navigate('/');
-  };
-
   return (
     <div className="details__wrapper">
       <div className="details__overlay" />
-      <CloseIcon className="details__icon" onClick={handleGoBack} />
+      <CloseIcon className="details__icon" onClick={() => navigate('/')} />
       <div className="details__inner-wrapper">
-        {isLoading && <div>CARREGANDO...</div>}
-        {isError && <div>Erro</div>}
-        {isSuccess && <div>details {JSON.stringify(data?.data, null, 2)}</div>}
+        {/* {isLoading && <div>CARREGANDO...</div>}
+        {isError && <div>Erro</div>} */}
+        {isSuccess && (
+          <div className="details__infos">
+            <span>
+              <h2 className="details__name">{data?.data[0].name}</h2>
+              <p className="details__nickname">{data?.data[0].nickname}</p>
+              <p>
+                Ator: <span>{data?.data[0].portrayed}</span>
+              </p>
+            </span>
+            <img
+              src={data?.data[0].img}
+              alt="profile-picure"
+              className="details__image"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
