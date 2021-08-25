@@ -70,7 +70,7 @@ export const List: React.FC = () => {
             </p>
           )}
 
-          {!data?.pages[0].data.length ? (
+          {!data?.pages[0].data.length && !isLoading ? (
             <p className="list-image__text">
               Nenhum personagem encontrado com esse nome.
             </p>

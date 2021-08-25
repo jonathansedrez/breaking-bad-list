@@ -11,8 +11,7 @@ interface IDetails extends RouteComponentProps {
 export const Details: React.FC<IDetails> = (props: IDetails) => {
   const { characterId = '' } = props;
 
-  const { data, isLoading, isError, isSuccess } =
-    useFetchCharacterDetail(characterId);
+  const { data, isSuccess } = useFetchCharacterDetail(characterId);
 
   const navigate = useNavigate();
 
@@ -21,14 +20,12 @@ export const Details: React.FC<IDetails> = (props: IDetails) => {
       <div className="details__overlay" />
       <CloseIcon className="details__icon" onClick={() => navigate('/')} />
       <div className="details__inner-wrapper">
-        {/* {isLoading && <div>CARREGANDO...</div>}
-        {isError && <div>Erro</div>} */}
         {isSuccess && (
           <div className="details__infos">
             <span>
               <h2 className="details__name">{data?.data[0].name}</h2>
               <p className="details__nickname">{data?.data[0].nickname}</p>
-              <p>
+              <p className="details__text">
                 Ator: <span>{data?.data[0].portrayed}</span>
               </p>
             </span>

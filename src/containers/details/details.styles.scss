@@ -49,6 +49,13 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: $presentation;
+  margin-bottom: 16px;
+}
+
+.details__text {
+  padding-right: 8px;
+  font-weight: 400;
+  color: $black;
 }
 
 .details__infos {
@@ -56,6 +63,15 @@
   width: 60vw;
   padding-top: 64px;
   justify-content: space-between;
+
+  @media (max-width: 1245px) {
+    width: 90vw;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .details__image {
