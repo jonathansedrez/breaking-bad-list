@@ -3,5 +3,6 @@
 exports[`List Characters screen should execute snapshot 1`] = `
 <input
   class="input__text"
+  value=""
 />
 `;

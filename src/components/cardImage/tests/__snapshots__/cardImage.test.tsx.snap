@@ -2,17 +2,17 @@
 
 exports[`[Component] Card Image should execute snapshot 1`] = `
 <div
-  class="card-image-wrapper"
+  class="card-image__wrapper"
   role="contentinfo"
 >
   <img
     alt="alt image"
-    class="card-image"
+    class="card-image__image"
     src="htttp://image.pnge"
   />
   <div>
     <p
-      class="card-image-text"
+      class="card-image__text"
     >
       John Doe
     </p>
