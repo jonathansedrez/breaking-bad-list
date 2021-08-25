@@ -2,7 +2,6 @@
 
 Aplicação com a listagem de personagens da série Breaking Bad. Aplicação consumindo a API disponível em https://breakingbadapi.com/documentation
 
-Você pode acessar a aplicação por [aqui](https://transactions-app.netlify.app/).
 </br>
 
 ### Tecnologias
