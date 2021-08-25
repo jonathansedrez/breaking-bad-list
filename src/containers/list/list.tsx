@@ -34,8 +34,6 @@ export const List: React.FC = () => {
 
   return (
     <div className="list-image__wrapper">
-      {/* {isError && <div>Erro</div>} */}
-
       <Loader isVisible={isLoading} />
 
       <div className="list-image__phrase-container">
@@ -65,21 +63,31 @@ export const List: React.FC = () => {
                 ))}
               </React.Fragment>
             ))}
+
+          {isError && (
+            <p className="list-image__text">
+              Error ao buscar personagens, tente novamente mais tarde.
+            </p>
+          )}
+
+          {!data?.pages[0].data.length ? (
+            <p className="list-image__text">
+              Nenhum personagem encontrado com esse nome.
+            </p>
+          ) : null}
         </div>
       </div>
 
       <div className="list-image__footer" ref={footerRef}>
-        {isFetchingNextPage && (
+        {isFetchingNextPage && !isError && (
           <span className="list-image__footer__load-more">
-            <p className="list-image__footer__text">Carregando mais...</p>
+            <p className="list-image__text">Carregando mais...</p>
             <Loader isVisible={isFetchingNextPage} size="small" />
           </span>
         )}
 
-        {!hasNextPage && !isLoading && (
-          <p className="list-image__footer__text">
-            Todos persononagens carregados :)
-          </p>
+        {!hasNextPage && !isLoading && !isError && !filterInputDebounce && (
+          <p className="list-image__text">Todos persononagens carregados :)</p>
         )}
       </div>
     </div>
